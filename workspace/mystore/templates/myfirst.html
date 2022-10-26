@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="{% static 'css/css.css'%}">
+    
+
+        
+     </head>
+    <body>
+        <header>
+            <a href="myfirst.html">
+                <img src="" alt="Shop Name" style="width: 200px;">
+            </a>
+        </header>
+        <nav>
+            <h2 style="color:#FF7F0A">Category</h2>
+            <ul>
+               <li><a href="web.html">Home</a></li>
+               <li><a href="poster.html">Add new product</a></li>
+               <li><a href="video.html">Search product</a></li>
+               
+            </ul>
+        </nav>
+        <main>
+            <article>
+                <h2 >Product</h2>
+                <p >This is the product that avalible in the stock right now.</p>
+                <br>
+                <table border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Brand</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Product Image</th>
+                </tr>
+                {% for x in stock %}
+                <tr>
+                    <td>{{x.Product_name}}</td>
+                    <td>{{x.cat}}</td>
+                    <td>{{x.brand_name}}</td>
+                    <td>{{x.qty}}</td>
+                    <td>{{x.price}}</td>
+                    <td>{{x.picture}}</td>
+                </tr>
+                {% endfor %}
+                </table>
+                
+            </article>
+        </main>
+        
+        <footer>
+            &copy; 2022 Pongsathon Tangkanakul
+         </footer>
+    </body>
+</html>

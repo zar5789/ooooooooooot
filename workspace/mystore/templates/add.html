@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            header, footer {
+            clear: both;
+            text-align: left;
+            background-color: #7FE3F0;
+            }
+
+            header img {
+                margin-top: 20px;
+                margin-left: 20px;
+            }
+
+
+            nav {
+                width: 20%;
+                float: left;
+            }
+            nav ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                border-color: black;
+            }
+            nav ul li{
+                background-color:#7FE3F0;
+                margin: 2px;
+                padding: 10px;
+                border-radius: 5px;
+                font-weight: bold;
+                border-color: black;
+            }
+            main {
+                width: 80%;
+                float: left;
+            }
+
+            article {
+                border: 2px solid lightgray;
+                margin-bottom: 20px;
+                padding: 25px;
+                border-radius: 15px;
+                border-bottom: 15px;
+
+            }
+
+            ul {
+                font-size: 110%;
+            }
+            ul li {
+                padding:2px;
+            }
+            
+            p {
+                font-size: 120%;
+            }
+    
+
+        </style>
+            
+    </head>
+    <body>
+        <header>
+            <a href="myfirst.html">
+                <img src="Pencil.png" alt="Shop Name" style="width: 200px;">
+            </a>
+        </header>
+        <nav>
+            <h2 style="color:#FF7F0A">Category</h2>
+            <ul>
+               <li><a href="web.html">Home</a></li>
+               <li><a href="poster.html">Add new product</a></li>
+               <li><a href="video.html">Search product</a></li>
+               
+            </ul>
+        </nav>
+        <main>
+            <article>
+                <h2 >Add new product</h2>
+                <p >This is page that you can add a new product into the store.</p>
+                <br>
+                <form action="addrecord/" method="post">
+                    {% csrf_token %}
+
+                    Product Name: <br>
+                    <input type="text" name="name">
+                    <br>
+
+                    Category: <br>
+                    <input type="text" name="category">
+                    <br>
+
+                    Brand: <br>
+                    <input type="text" name="brand">
+                    <br>
+
+                    Quantity: <br>
+                    <input type="number" name="qty">
+                    <br>
+
+                    Price: <br>
+                    <input type="number" name="price">
+                    <br>
+
+                    Picture: <br>
+                    
+
+
+
+                </form>
+                
+            </article>
+        </main>
+        
+        <footer>
+            &copy; 2022 Pongsathon Tangkanakul
+         </footer>
+    </body>
+</html>
