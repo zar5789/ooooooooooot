@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/css.css'%}">
+            
+    </head>
+    <body>
+        <header>
+            <a href="myfirst/">
+                <img src="{% static 'picture/Pencil.png' %}" alt="Shop Name" style="width: 200px;">
+            </a>
+        </header>
+        <nav>
+            <h2 style="color:#FF7F0A">Category</h2>
+            <ul>
+               <li><a href="myfirst/">Home</a></li>
+               <li><a href=" ">Add new product</a></li>
+               
+            </ul>
+        </nav>
+        <main>
+            <article>
+                <h2 >Add new product</h2>
+                <p >This is page that you can add a new product into the store.</p>
+                <br>
+                <form action="addrecord/" method="post">
+                    {% csrf_token %}
+
+                    Product Name: <br>
+                    <input type="text" name="name">
+                    <br>
+
+                    Category: <br>
+                    <input type="text" name="category">
+                    <br>
+
+                    Brand: <br>
+                    <input type="text" name="brand">
+                    <br>
+
+                    Quantity: <br>
+                    <input type="number" name="qty">
+                    <br>
+
+                    Price: <br>
+                    <input type="number" name="price">
+                    <br>
+
+                    Picture(link):  <br>
+                    <input type="text" name="picture">
+                    <br>
+
+                    <input type="submit" value="Submit">
+                    
+
+
+
+                </form>
+                
+            </article>
+        </main>
+        
+        <footer>
+            &copy; 2022 Pongsathon Tangkanakul
+         </footer>
+    </body>
+</html>

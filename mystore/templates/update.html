@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/css.css'%}">
+            
+    </head>
+    <body>
+        <header>
+            <a href="myfirst/">
+                <img src="{% static 'picture/Pencil.png' %}" alt="Shop Name" style="width: 200px;">
+            </a>
+        </header>
+        <nav>
+            <h2 style="color:#FF7F0A">Category</h2>
+            <ul>
+               <li><a href="myfirst/">Home</a></li>
+               
+            </ul>
+        </nav>
+        <main>
+            <article>
+                <h2>Update</h2>
+                <p>This is page that show up when you use search.</p>
+                <br>
+                <h1>Add member</h1>
+                <form action="edit_record/{{stock.id}}" method="post">
+                {% csrf_token %}
+                Item name: <br>
+                <input type="text" name="name" value="{{stock.Product_name}}">
+                <br>
+                Category: <br>
+                <input type="text" name="cate" value="{{stock.Category}}">
+                <br>
+                Brand: <br>
+                <input type="text" name="brand" value="{{stock.brand_name}}">
+                <br>
+                Quantity: <br>
+                <input type="number" name="qty" value="{{stock.qty}}">
+                <br>
+                Price: <br>
+                <input type="number" name="price" value="{{stock.price}}">
+                <br>
+                Product Image: <br>
+                <input type="text" name="picture" value="{{stock.picture}}">
+                <br><br>
+                <input type="submit" value="Submit">
+    </form>
+                
+            </article>
+        </main>
+        
+        <footer>
+            &copy; 2022 Pongsathon Tangkanakul
+         </footer>
+    </body>
+</html>

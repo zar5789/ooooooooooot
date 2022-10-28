@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="{% static 'css/css.css'%}">
+    
+
+        
+     </head>
+    <body>
+        <header>
+            <a href=''>
+                <img src="{% static 'picture/Pencil.png' %}" alt="Shop Name" style="width: 200px;">
+            </a>
+        </header>
+        <nav>
+            <h2 style="color:#FF7F0A; text-decoration: underline;">Category</h2>
+            <ul>
+               <li><a href=''>Home</a></li>
+               <li><a href="add/">Add new product</a></li>
+               <li>
+                <a style="color:#FF7F0A; text-decoration: underline;">Search</a>
+                <form action="search/">
+                <input type="search" name="sname" placeholder="Name">
+                <input type="search" name="scate" placeholder="Category">
+                <input type="search" name="sbr" placeholder="Brand">
+                <button type="submit">Search</button>
+            </form></li>
+               
+            </ul>
+        </nav>
+        <main>
+            <article>
+                <h2 >Product</h2>
+                <p >This is the product that avalible in the stock right now.</p>
+                <br>
+                <table border="1">
+                <tr>
+                    <th>Product ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Brand</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Product Image</th>
+                    <th></th>
+                </tr>
+                {% for x in stock %}
+                <tr>
+                    <td>{{x.id}}</td>
+                    <td>{{x.Product_name}}</td>
+                    <td>{{x.Category}}</td>
+                    <td>{{x.brand_name}}</td>
+                    <td>{{x.qty}}</td>
+                    <td>{{x.price}}</td>
+                    <td><img src='{{x.picture}}' alt="Product image" style="width: 128px;;height:128px;"></td>
+                    <td>
+                        <button>
+                            <a href="update/{{x.id}}">Edit</a>
+                        </button>
+                        <button>
+                            <a href="delete/{{x.id}}">Delete</a>
+                        </button>
+                    </td>
+                </tr>
+                {% endfor %}
+                </table>
+                
+            </article>
+        </main>
+        
+        <footer>
+            &copy; 2022 Pongsathon Tangkanakul
+         </footer>
+    </body>
+</html>
